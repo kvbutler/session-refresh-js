@@ -1,0 +1,46 @@
+{
+  "name": "session-refresh-js",
+  "version": "1.0.0",
+  "description": "Refreshes sessions across multiple applications",
+  "main": "dist/session-refresh.js",
+  "repository": {
+    "url": "https://github.com/kvbutler/session-refresh-js.git"
+  },
+  "keywords": [
+    "session",
+    "refresh",
+    "active",
+    "user"
+  ],
+  "displayName": "Session Refresh JS",
+  "scripts": {
+    "test": "echo TODO",
+    "lint": "eslint src/",
+    "lint-fix": "eslint src/ --fix",
+    "build:dev": "babel -d dist/ src/",
+    "build:min": "cross-env BABEL_ENV=minify babel -d dist/ --out-file-extension .min.js src/",
+    "build": "yarn build:dev && yarn build:min",
+    "webpack": "webpack --mode production",
+    "clean": "rimraf dist",
+    "prepublish": "npm run lint && npm test && npm run clean && npm run build && npm run webpack"
+  },
+  "author": "Ken Butler <kenneth.v.butler@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "activity-detector": "^3.0.0",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "babel-preset-minify": "^0.5.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.10.0",
+    "rimraf": "^3.0.2",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
