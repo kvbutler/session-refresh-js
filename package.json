@@ -1,8 +1,8 @@
 {
   "name": "session-refresh-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Refreshes sessions across multiple applications",
-  "main": "dist/session-refresh.js",
+  "main": "dist/session-refresh-webpack.js",
   "repository": {
     "url": "https://github.com/kvbutler/session-refresh-js.git"
   },
