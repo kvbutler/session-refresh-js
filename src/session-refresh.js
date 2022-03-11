@@ -70,7 +70,14 @@ class RefreshSession {
   makeRefreshRequests() {
     this.options.refreshUris.forEach(async (uri) => {
       this.log(`Sending request: ${uri}`);
-      await fetch(uri);
+      try {
+        await fetch(uri, {
+          method: 'GET',
+          credentials: 'include',
+        });
+      } catch (e) {
+        console.log(e);
+      }
     });
   }
 }
