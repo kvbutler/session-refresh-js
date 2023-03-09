@@ -15,10 +15,8 @@ class RefreshSession {
   constructor(options) {
     this.validateOptions(options);
     this.options = this.setDefaultOptions(options);
-    console.log(createActivityDetector);
     this.detector = createActivityDetector();
     this.log = log.bind(this);
-    this.setupListeners();
   }
 
   setupListeners() {
@@ -57,6 +55,7 @@ class RefreshSession {
       this.log('User activity transitioned to idle state.');
       if (this.intervalTask) {
         clearInterval(this.intervalTask);
+        this.intervalTask = null;
       }
     });
   }
